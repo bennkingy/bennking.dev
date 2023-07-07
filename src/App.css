@@ -21,26 +21,25 @@ pre {
   margin: 0;
 }
 
-.__json-key__ {
+.json-key {
   color: #9876aa;
   font-weight: 600;
 }
 
-/* .json-value {
-    color: #a9b7c6;
-} */
-
-.__json-string__,
-.__json-string__ a,
-.__json-string__ a:active,
-.__json-string__ a:hover,
-.__json-string__ a:visited {
+.json-string,
+.json-string a,
+.json-string a:active,
+.json-string a:hover,
+.json-string a:visited {
   color: #6a8759;
 }
 
-.__json-key__,
-/* .json-value, */
-.__json-string__ {
+.json-string a {
+  text-decoration: underline;
+}
+
+.json-key,
+.json-string {
   display: inline-block;
   margin: 5px 0;
 }
