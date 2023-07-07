@@ -1,18 +1,29 @@
 import './App.css'
 
-function App() {
+interface Data {
+  name: string
+  location: string
+  email: string
+  gitHub: string
+  linkedIn: string
+  frontendSkills: string[]
+  backendSkills: string[]
+  otherSkills: string[]
+}
+
+function App(): JSX.Element {
   // Keys to process for special formatting
-  let processKeys = ['email', 'gitHub', 'linkedIn']
+  let processKeys: string[] = ['email', 'gitHub', 'linkedIn']
 
   // Regular expression pattern for matching JSON lines
-  let jsonLineRegex = /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/gm
+  let jsonLineRegex: RegExp = /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/gm
 
   // Regular expression pattern for validating email format
-  let emailRegex =
+  let emailRegex: RegExp =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/gm
 
   // Data object containing the JSON data
-  let data = {
+  let data: Data = {
     name: 'Benn King',
     location: 'Surrey, UK',
     email: 'bennkingy@gmail.com',
@@ -32,17 +43,23 @@ function App() {
     otherSkills: ['Git', 'WordPress', 'SPFX'],
   }
 
-  function jsonReplacer(match, indent, keyPart, valuePart, endPart) {
+  function jsonReplacer(
+    match: string,
+    indent: string,
+    keyPart: string,
+    valuePart: string,
+    endPart: string
+  ): string {
     // Extracted key without quotes or spaces
-    let actualKey = null
+    let actualKey: string | null = null
 
     // HTML styles for key, value, and string
-    let key = '<span class="json-key">'
-    let value = '<span class="json-value">'
-    let string = '<span class="json-string">'
+    let key: string = '<span class="json-key">'
+    let value: string = '<span class="json-value">'
+    let string: string = '<span class="json-string">'
 
     // Reconstructed line with indentation
-    let result = indent || ''
+    let result: string = indent || ''
 
     if (keyPart) {
       // Remove quotes and spaces from key
@@ -50,9 +67,9 @@ function App() {
       result = result + key + actualKey + '</span>: '
     }
 
-    if (keyPart && valuePart && processKeys.indexOf(actualKey) !== -1) {
+    if (keyPart && valuePart && processKeys.indexOf(actualKey!) !== -1) {
       // Process the value for special formatting
-      valuePart = processValue(actualKey)
+      valuePart = processValue(actualKey!)
     }
 
     if (valuePart) {
@@ -65,7 +82,7 @@ function App() {
   }
 
   // Converts the JSON object to a pretty-printed string with HTML formatting
-  function jsonPrettyPrint(obj) {
+  function jsonPrettyPrint(obj: Data): string {
     return JSON.stringify(obj, null, 3)
       .replace(/&/g, '&amp;')
       .replace(/\\"/g, '&quot;')
@@ -75,18 +92,22 @@ function App() {
   }
 
   // Processes a value based on the provided key
-  function processValue(key) {
+  function processValue(key: string): string {
+    // @ts-ignore
     if (emailRegex.test(data[key])) {
       // Format email value as a mailto link
       return wrapWithQuotes(
+        // @ts-ignore
         '<a href="mailto:' + data[key] + '">' + data[key] + '</a>'
       )
     } else {
       // Format other values as external links
       return wrapWithQuotes(
         '<a href="https://www.' +
+          // @ts-ignore
           data[key] +
           '" target="_blank">' +
+          // @ts-ignore
           data[key] +
           '</a>'
       )
@@ -94,7 +115,7 @@ function App() {
   }
 
   // Wraps a string with double quotes
-  function wrapWithQuotes(str) {
+  function wrapWithQuotes(str: string): string {
     return '"' + str + '"'
   }
 
