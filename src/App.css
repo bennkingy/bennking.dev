@@ -22,7 +22,7 @@ pre {
 }
 
 .json-key {
-  color: #9876aa;
+  color: #b599c4;
   font-weight: 600;
 }
 
@@ -31,7 +31,7 @@ pre {
 .json-string a:active,
 .json-string a:hover,
 .json-string a:visited {
-  color: #6a8759;
+  color: #74aa55;
 }
 
 .json-string a {
