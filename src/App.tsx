@@ -1,3 +1,4 @@
+import DOMPurify from 'dompurify'
 import './App.css'
 
 interface Data {
@@ -11,7 +12,7 @@ interface Data {
   otherSkills: string[]
 }
 
-function App(): JSX.Element {
+function App() {
   // Keys to process for special formatting
   let processKeys: string[] = ['email', 'gitHub', 'linkedIn']
 
@@ -119,11 +120,13 @@ function App(): JSX.Element {
     return '"' + str + '"'
   }
 
+  const safeInnerHTML = DOMPurify.sanitize(jsonPrettyPrint(data))
+
   return (
     <pre>
       <code
         dangerouslySetInnerHTML={{
-          __html: jsonPrettyPrint(data),
+          __html: safeInnerHTML,
         }}
       ></code>
     </pre>
