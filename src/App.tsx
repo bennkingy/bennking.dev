@@ -25,6 +25,7 @@ function App() {
       'JavaScript',
       'TypeScript',
       'React',
+      'React Native',
       'Vue',
     ],
     backendSkills: ['Node.JS', 'Express', 'MongoDB', 'PHP', 'MySQL'],
