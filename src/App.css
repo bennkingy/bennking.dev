@@ -9,7 +9,7 @@ body {
   background-color: #2b2b2b;
   height: auto;
   margin: 0;
-  font-family: 'Open Sans', sans-serif !important;
+  font-family: 'Open Sans', sans-serif;
   padding: 10px;
 }
 
@@ -18,7 +18,7 @@ pre {
   color: #a9b7c6;
   font-display: swap;
   font-size: 1vw;
-  margin: 0;
+  margin: 10px 5px 0px;
 }
 
 .json-key {
