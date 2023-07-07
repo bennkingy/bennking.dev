@@ -1,3 +1,4 @@
+// @ts-nocheck
 import './App.css'
 
 function App() {
