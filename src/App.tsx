@@ -10,12 +10,11 @@ interface Data {
   frontendSkills: string[]
   backendSkills: string[]
   otherSkills: string[]
-  projects: string[]
 }
 
 function App() {
   // Keys to process for special formatting
-  let processKeys: string[] = ['email', 'gitHub', 'linkedIn', 'projects']
+  let processKeys: string[] = ['email', 'gitHub', 'linkedIn']
 
   // Regular expression pattern for matching JSON lines
   let jsonLineRegex: RegExp = /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/gm
@@ -43,7 +42,6 @@ function App() {
     ],
     backendSkills: ['Node.JS', 'Express', 'MongoDB', 'PHP', 'MySQL'],
     otherSkills: ['Git', 'WordPress', 'SPFX'],
-    projects: ['https://gracious-knuth-0636e8.netlify.app/'],
   }
 
   function jsonReplacer(
