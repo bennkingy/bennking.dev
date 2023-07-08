@@ -1,2 +1,2 @@
-# vite-react-ts-100
-Build a PWA to achieve 100% in Google Lighthouse with Vite
+# bennking.dev
+100% scores on Google Lighthouse.
