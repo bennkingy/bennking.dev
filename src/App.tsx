@@ -41,7 +41,7 @@ function App() {
       'Vue',
     ],
     backendSkills: ['Node.JS', 'Express', 'MongoDB', 'PHP', 'MySQL'],
-    otherSkills: ['Git', 'WordPress', 'SPFX'],
+    otherSkills: ['Git', 'WordPress', 'SPFx'],
   }
 
   function jsonReplacer(
