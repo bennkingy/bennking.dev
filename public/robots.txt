@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.bennking.dev//sitemap.xml
