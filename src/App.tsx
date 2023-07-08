@@ -14,7 +14,7 @@ interface Data {
 
 function App() {
   // Keys to process for special formatting
-  let processKeys: string[] = ['email', 'gitHub', 'linkedIn']
+  let processKeys: string[] = ['email', 'gitHub', 'linkedIn', 'projects']
 
   // Regular expression pattern for matching JSON lines
   let jsonLineRegex: RegExp = /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/gm
