@@ -10,6 +10,7 @@ interface Data {
   frontendSkills: string[]
   backendSkills: string[]
   otherSkills: string[]
+  projects: string[]
 }
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
     ],
     backendSkills: ['Node.JS', 'Express', 'MongoDB', 'PHP', 'MySQL'],
     otherSkills: ['Git', 'WordPress', 'SPFX'],
+    projects: ['https://gracious-knuth-0636e8.netlify.app/'],
   }
 
   function jsonReplacer(
