@@ -7,3 +7,4 @@ Live URL: https://bennking.dev/
 
 - React
 - Vite
+- PWA
